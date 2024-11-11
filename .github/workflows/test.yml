@@ -15,7 +15,15 @@ jobs:
           python-version: 3.7
 
       - name: Setup Poetry
-        uses: Gr1N/setup-poetry@v7
+        # You may pin to the exact commit or the version.
+        # uses: Gr1N/setup-poetry@48b0f77c8c1b1b19cb962f0f00dff7b4be8f81ec
+        uses: Gr1N/setup-poetry@v9
+        with:
+          # Allow to install prerelease versions of Poetry
+          poetry-preview: # optional, default is false
+          # Poetry version to use, if version is not provided then latest stable version will be used
+          poetry-version: # optional
+          
 
       - name: Run poetry install
         run: poetry install
